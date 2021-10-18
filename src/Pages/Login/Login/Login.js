@@ -11,7 +11,7 @@ const Login = () => {
   const location = useLocation();
   const history = useHistory();
   const redirect_url = location.state?.from || '/home'
-  console.log('came from', location.state?.from);
+
   
   
  const handleEmailChange = (e) => {
@@ -23,12 +23,15 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signInWithEmailAndPass();
+    signInWithEmailAndPass().then((result) => {
+      history.push(redirect_url);
+      console.log(result?.user);
+    });
   }
   const handleSignInUsingGoogle = () => {
     signInUsingGoogle().then((result) => {
       history.push(redirect_url);
-    // console.log(result?.user);
+    console.log(result?.user);
   });
 }
   return (

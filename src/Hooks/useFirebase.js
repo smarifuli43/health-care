@@ -24,17 +24,12 @@ const useFirebase = () => {
 
   // google sign in
   const signInUsingGoogle = () => {
-    signInWithPopup(auth, googleProvider)
-      .catch((error) => {
-        setError(error.message);
-      });
-  };
+    return signInWithPopup(auth, googleProvider);
+  }
 //  Sign in with email and password
   const signInWithEmailAndPass = () => {
-   signInWithEmailAndPassword(auth, email, password)
-     .catch((error) => {
-       setError(error.message);
-     });
+  return signInWithEmailAndPassword(auth, email, password)
+  
 }
   // Create New User
   const createNewUser = () => {
