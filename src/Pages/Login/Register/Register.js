@@ -3,10 +3,21 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
 const Register = () => {
-  const { signInUsingGoogle } = useAuth();
+  const { setName, setEmail, setPassword, signInUsingGoogle, createNewUser } = useAuth();
+    const handleNameChange = (e) => {
+      setName(e.target.value);
+    };
+const handleEmailChange = (e) => {
+  setEmail(e.target.value);
+};
+const handlePasswordChange = (e) => {
+ setPassword(e.target.value);
+};
 
-
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createNewUser();
+  };
  
   return (
     <div className='container my-5'>
@@ -14,16 +25,33 @@ const Register = () => {
       <div className='row form p-4'>
         <div className='col-12 col-lg-6'>
           <Form onSubmit={handleSubmit} className='p-3'>
+            <Form.Group className='mb-3' controlId='formBasicName'>
+              <Form.Label>Your Name</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Your Name'
+                onBlur={handleNameChange}
+              />
+            </Form.Group>
             <Form.Group className='mb-3' controlId='formBasicEmail'>
               <Form.Label>Email address</Form.Label>
-              <Form.Control type='email' placeholder='Enter email' />
+              <Form.Control
+                type='email'
+                placeholder='Enter email'
+                onBlur={handleEmailChange}
+              />
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='formBasicPassword'>
               <Form.Label>Password</Form.Label>
-              <Form.Control type='password' placeholder='Password' />
+              <Form.Control
+                type='password'
+                placeholder='Password'
+                onBlur={handlePasswordChange}
+              />
             </Form.Group>
-            <button className='btn-hospital'>Appointment</button>
+
+            <button className='btn-hospital'>Submit</button>
             <Link to='/login' className='mt-3 d-block'>
               Already have an Account? Login
             </Link>

@@ -1,15 +1,36 @@
 
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-  const { signInUsingGoogle } = useAuth();
+  const { setEmail, setPassword, signInUsingGoogle, signInWithEmailAndPass } =
+    useAuth();
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_url = location.state?.from || '/home'
+  console.log('came from', location.state?.from);
+  
+  
+ const handleEmailChange = (e) => {
+   setEmail(e.target.value);
+ };
+ const handlePasswordChange = (e) => {
+   setPassword(e.target.value);
+ };
 
-  const handleSubmit = () => { }
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPass();
+  }
+  const handleSignInUsingGoogle = () => {
+    signInUsingGoogle().then((result) => {
+      history.push(redirect_url);
+    // console.log(result?.user);
+  });
+}
   return (
     <div className='container my-5'>
       <h2 className='text-center mb-5'>Please Login</h2>
@@ -18,14 +39,22 @@ const Login = () => {
           <Form onSubmit={handleSubmit} className='p-3'>
             <Form.Group className='mb-3' controlId='formBasicEmail'>
               <Form.Label>Email address</Form.Label>
-              <Form.Control type='email' placeholder='Enter email' />
+              <Form.Control
+                type='email'
+                placeholder='Enter email'
+                onBlur={handleEmailChange}
+              />
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='formBasicPassword'>
               <Form.Label>Password</Form.Label>
-              <Form.Control type='password' placeholder='Password' />
+              <Form.Control
+                type='password'
+                placeholder='Password'
+                onBlur={handlePasswordChange}
+              />
             </Form.Group>
-            <button className='btn-hospital'>Appointment</button>
+            <button className='btn-hospital'>Submit</button>
             <Link to='/register' className='mt-3 d-block'>
               Or create an Account
             </Link>
@@ -33,7 +62,7 @@ const Login = () => {
         </div>
         <div className='col-12 col-lg-6 mt-4 d-flex align-items-center  p-4'>
           <h1 className='me-3'>Or</h1>
-          <Button className='btn-sm' onClick={signInUsingGoogle}>
+          <Button className='btn-sm' onClick={handleSignInUsingGoogle}>
             <i className='fab fa-google fs-3 me-3'></i>
             Sign in With Google
           </Button>
