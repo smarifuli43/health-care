@@ -7,21 +7,21 @@
     "img": "https://i.ibb.co/vc2BkZY/doc-1.jpg"
   },
   {
-    "id": 1,
+    "id": 2,
     "name": "Dr. Jhon Smith",
     "role": "Neurologist",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit porro impedit alias quae amet delectus optio.",
     "img": "https://i.ibb.co/GR9hxWN/doc-2.jpg"
   },
   {
-    "id": 1,
+    "id": 3,
     "name": "Dr. Jhon Due",
     "role": "Dentist",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit porro impedit alias quae amet delectus optio.",
     "img": "https://i.ibb.co/PYy6g3q/doc-3.jpg"
   },
   {
-    "id": 1,
+    "id": 4,
     "name": "Dr. Jhon Due",
     "role": "Sergeon",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit porro impedit alias quae amet delectus optio.",

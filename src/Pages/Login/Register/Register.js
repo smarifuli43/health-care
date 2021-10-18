@@ -35,6 +35,7 @@ const handlePasswordChange = (e) => {
                 type='text'
                 placeholder='Your Name'
                 onBlur={handleNameChange}
+                required
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formBasicEmail'>
@@ -43,6 +44,7 @@ const handlePasswordChange = (e) => {
                 type='email'
                 placeholder='Enter email'
                 onBlur={handleEmailChange}
+                required
               />
             </Form.Group>
 
@@ -52,6 +54,7 @@ const handlePasswordChange = (e) => {
                 type='password'
                 placeholder='Password'
                 onBlur={handlePasswordChange}
+                required
               />
             </Form.Group>
 

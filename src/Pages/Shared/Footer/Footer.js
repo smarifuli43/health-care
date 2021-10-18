@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
 
 
-            <div className='col-12 col-md-6 col-lg-4 px-4'>
+            <div className='col-12 col-md-6 col-lg-4 px-lg-4'>
               <div className='footer-item'>
                 <h5 className='text-uppercase text-white border-start border-3  ps-2 mb-4'>
                   Enquery Form

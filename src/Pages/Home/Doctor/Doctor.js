@@ -16,10 +16,10 @@ const Doctor = (props) => {
             {description}
 
             <div className=' d-flex justify-content-around mt-4 px-4'>
-              <a href='/'> <i class='fab fa-facebook fs-4'></i></a>
-              <a href='/'><i class='fab fa-instagram fs-4'></i></a>
-              <a href='/'><i class='fab fa-linkedin fs-4'></i></a>
-              <a href='/'><i class='fab fa-twitter fs-4'></i></a>
+              <a href='/'> <i className='fab fa-facebook fs-4'></i></a>
+              <a href='/'><i className='fab fa-instagram fs-4'></i></a>
+              <a href='/'><i className='fab fa-linkedin fs-4'></i></a>
+              <a href='/'><i className='fab fa-twitter fs-4'></i></a>
               
             </div>
           </Card.Text>
