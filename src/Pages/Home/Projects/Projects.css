@@ -1,0 +1,23 @@
+.projects{
+    background:linear-gradient( #00b093a8,#00b093a8),  url(../../../img/health-bg.jpg) no-repeat;
+    background-size: cover;
+    margin-top: 80px;
+    color: #00b093a4;
+}
+.project-box{
+    border:1px solid #f2f2f285;
+}
+.project{
+    color:#fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+.project-box i{
+    background:transparent;
+     border:none;
+     color:#fff;
+     font-size: 35px;
+   transform: translateX(-20%);
+   margin-bottom: 2rem;
+
+}
