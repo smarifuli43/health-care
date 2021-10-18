@@ -1,0 +1,9 @@
+.banner{
+  background: linear-gradient(135deg, #000000d2, #0000005b),
+    url(../../../img/banner/banner.png) no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+}
