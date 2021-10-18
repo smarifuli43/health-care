@@ -29,21 +29,21 @@ function App() {
             <Route path='/home'>
               <Home></Home>
             </Route>
-            <Route path='/about'>
+            <PrivateRoute path='/about'>
               <About></About>
-            </Route>
+            </PrivateRoute>
             <Route path='/login'>
               <Login></Login>
             </Route>
             <PrivateRoute path='/service/:serviceId'>
-            <ServiceDetails></ServiceDetails>
+              <ServiceDetails></ServiceDetails>
             </PrivateRoute>
-            <Route path="/register">
+            <Route path='/register'>
               <Register></Register>
             </Route>
-            <Route path="/contact">
-            <Contact></Contact>
-            </Route>
+            <PrivateRoute path='/contact'>
+              <Contact></Contact>
+            </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>
             </Route>

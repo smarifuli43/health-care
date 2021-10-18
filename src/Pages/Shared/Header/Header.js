@@ -14,7 +14,7 @@ const Header = () => {
           expand='md'
           bg='dark'
           variant='dark'
-          // fixed='top'
+          fixed='top'
         >
           <Container>
             <Navbar.Brand as={Link} to='/'>

@@ -7,8 +7,8 @@ import './Service.css'
 const Service = (props) => {
   const { id, name, img, description } = props.service;
   return (
-    <div className='service'>
-      <Card className='h-100 card'>
+    <div className='service' >
+      <Card className='h-100 card p-3'>
         <Card.Img variant='top' src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>

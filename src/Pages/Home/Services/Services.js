@@ -13,7 +13,7 @@ const Services = () => {
   }, []);
   return (
     <div className="container my-5">
-      <h2 className="text-uppercase pt-4 pb-3 text-center">Our <span className="services-header">Service</span> </h2>
+      <h2 className="text-uppercase pt-4 pb-3 text-center">Our <span className="header">Service</span> </h2>
 
       <p className="text-secondary text-center mb-3">We provide world class services in the medical sector. these survices are served by our qualified doctors and health specialists</p>
       <Row xs={1} md={2} lg={3} className='g-4'>

@@ -36,7 +36,7 @@ const Login = () => {
       .finally(() => setIsLoading(false));;
 }
   return (
-    <div className='container my-5'>
+    <div className='container mb-5' style={{ marginTop:'80px'}}>
       <h2 className='text-center mb-5'>Please Login</h2>
       <div className='row form p-4'>
         <div className='col-12 col-lg-6'>

@@ -2,6 +2,10 @@ import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
+
+
+
+
 const Register = () => {
   const { setName, setEmail, setPassword, signInUsingGoogle, createNewUser } = useAuth();
     const handleNameChange = (e) => {
@@ -20,7 +24,7 @@ const handlePasswordChange = (e) => {
   };
  
   return (
-    <div className='container my-5'>
+    <div className='container mb-5' style={{ marginTop: '80px' }}>
       <h2 className='text-center mb-5'>Create an Account</h2>
       <div className='row form p-4'>
         <div className='col-12 col-lg-6'>
