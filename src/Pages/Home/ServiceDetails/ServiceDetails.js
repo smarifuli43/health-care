@@ -50,11 +50,10 @@ const services = [
 const ServiceDetails = () => {
   const { serviceId } = useParams();
   const service = services.find((service) => service.id === parseInt(serviceId));
-   const { id, name, img, description } = service;
-  console.log(service);
+   const { name, img, description } = service;
   return (
     <div className='container my-5'>
-      <div className='row service-details p-4'>
+      <div className='row details p-4'>
         <div className='col-12 col-lg-6'>
           <img src={img} alt='' className='img-fluid rounded' />
         </div>
