@@ -6,11 +6,17 @@ import useAuth from '../../../Hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-  const { setEmail, setPassword, signInUsingGoogle, signInWithEmailAndPass, setIsLoading } = useAuth();
+  const {
+    setUser,
+    setEmail,
+    setPassword,
+    signInUsingGoogle,
+    signInWithEmailAndPass,
+    setIsLoading,
+  } = useAuth();
   const location = useLocation();
   const history = useHistory();
   const redirect_url = location.state?.from || '/home'
-
   
   
  const handleEmailChange = (e) => {
@@ -24,6 +30,7 @@ const Login = () => {
     e.preventDefault();
     signInWithEmailAndPass().then((result) => {
       history.push(redirect_url);
+       setUser(result.user);
       console.log(result?.user);
     });
   }
@@ -31,6 +38,7 @@ const Login = () => {
     signInUsingGoogle()
       .then((result) => {
         history.push(redirect_url);
+       setUser(result.user);
         console.log(result?.user);
       })
       .finally(() => setIsLoading(false));;

@@ -20,6 +20,7 @@ const handlePasswordChange = (e) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     createNewUser();
   };
  
