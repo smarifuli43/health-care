@@ -31,7 +31,7 @@ const Header = () => {
               <Nav.Link as={Link} to='/contact' className='nav-link'>
                 Contact
               </Nav.Link>
-              {user?.providerId ? (
+              {user?.email ? (
                 <Button onClick={logOut} className='btn-hospital '>
                   Log Out
                 </Button>
