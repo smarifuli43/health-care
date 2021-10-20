@@ -28,12 +28,11 @@ const useFirebase = () => {
   const signInUsingGoogle = () => {
     setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
-  }
-//  Sign in with email and password
+  };
+  //  Sign in with email and password
   const signInWithEmailAndPass = () => {
-  return signInWithEmailAndPassword(auth, email, password)
-  
-}
+    return signInWithEmailAndPassword(auth, email, password);
+  };
   // Create New User
   const createNewUser = () => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -41,6 +40,7 @@ const useFirebase = () => {
         setError('');
         console.log(result.user);
         setUserName();
+        logOut();
       })
       .catch((error) => {
         setError(error.message);
@@ -58,7 +58,7 @@ const useFirebase = () => {
         console.log(error);
       });
   };
-  
+
   // observe user state changed
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {

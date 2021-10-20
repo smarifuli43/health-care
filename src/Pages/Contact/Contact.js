@@ -1,11 +1,10 @@
 import React from 'react';
-import './Contact.css'
+import './Contact.css';
 
 const Contact = () => {
   return (
-    <div className='container my-5 details p-3 p-lg-4' >
-      <section >
-        <h2 className=' fs-1 text-center p-5'>
+    <div className='container details p-3 mb-5 p-lg-4'>
+        <h2 className=' fs-1 text-center p-2'>
           Contact<span className='header'> Us</span>
         </h2>
         <div className='row g-4'>
@@ -82,7 +81,6 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </section>
     </div>
   );
 };

@@ -1,29 +1,34 @@
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
-
-
-
-
+import { useHistory } from 'react-router-dom';
 
 const Register = () => {
-  const { setName, setEmail, setPassword, signInUsingGoogle, createNewUser } = useAuth();
-    const handleNameChange = (e) => {
-      setName(e.target.value);
-    };
-const handleEmailChange = (e) => {
-  setEmail(e.target.value);
-};
-const handlePasswordChange = (e) => {
- setPassword(e.target.value);
-};
+  const {
+    setName,
+    setEmail,
+    setPassword,
+    signInUsingGoogle,
+    createNewUser,
+    logOut,
+  } = useAuth();
+  const history = useHistory();
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     createNewUser();
+    history.push('/login');
   };
- 
+
   return (
     <div className='container mb-5' style={{ marginTop: '80px' }}>
       <h2 className='text-center mb-5'>Create an Account</h2>

@@ -36,13 +36,22 @@ const Header = () => {
                   Log Out
                 </Button>
               ) : (
-                <Nav.Link
-                  as={Link}
-                  to='/login'
-                  className='btn-hospital rounded text-white'
-                >
-                  Login
-                </Nav.Link>
+                <div className='d-flex'>
+                  <Nav.Link
+                    as={Link}
+                    to='/login'
+                    className='btn-hospital rounded text-white'
+                  >
+                    Login
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to='/register'
+                    className='btn-hospital rounded text-white ms-3'
+                  >
+                   Register
+                  </Nav.Link>
+                </div>
               )}
               <Navbar.Text>
                 <h5 className='ms-3 mt-2'>{user?.displayName}</h5>
